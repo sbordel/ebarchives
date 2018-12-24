@@ -14,8 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
+from ebarchivesweb import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
+    path('exhibit', views.exhibit, name='exhibit'),
+    path('festival', views.festival, name='festival'),
+    re_path('^workshop/(?P<year>[0-9]{4})/$', views.workshop, name='workshop'),
+    re_path('^workshop/(?P<letter>[A-Z]{1})/$', views.workshop, name='workshop'),
+    re_path('^workshop/(?P<year>[0-9]{4})/(?P<letter>[A-Z]{1})/$', views.workshop, name='workshop'),
+    path('radio', views.radio, name='radio'),
+    path('talk', views.talk, name='talk'),
+    path('event', views.event, name='event'),
+    path('misc', views.misc, name='misc'),
 ]

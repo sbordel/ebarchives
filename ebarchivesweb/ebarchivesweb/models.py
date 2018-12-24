@@ -49,7 +49,7 @@ class Artist(models.Model):
 
 class EventType(models.Model):
     type = models.CharField(choices=EVENT_CHOICES, max_length=200)
-    recurring_event = models.ForeignKey('RecurringEvent', on_delete=models.SET_NULL, null=True)
+    recurring_event = models.ForeignKey('RecurringEvent', on_delete=models.SET_NULL, null=True, blank=True)
 
 class RecurringEvent(models.Model):
     title = models.CharField(max_length=200)
