@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,8 +33,8 @@ h2{
   font-size:13px;
   color: #000000;
   line-height:15px;
-  max-height: 12px;
-  overflow-x: scroll;
+  max-height: 15px;
+  overflow-x: hidden;
   margin-bottom:-5px;
   margin-top:-5px;
 }
@@ -66,7 +68,7 @@ h4{
 }
  #artists{
   height: 45px;
-  overflow-y: scroll;
+  overflow-y: hidden;
  }
   #description{
     position: relative;
@@ -75,7 +77,7 @@ h4{
     font-size:13px;
     top: 70px;
     height: 301px;
-    overflow-y: scroll;
+    overflow-y: hidden;
   }
   #index{
     position: relative;
@@ -133,10 +135,13 @@ h4{
 
 <div class="row">
   <div class="column side" id="left">
-    <h1>type</h1>
-  <h2>title of event</h2>
-<h3 id="artists">artists participating/organising event</h3>
-<h4>year of event</h4>
+    <h1>{{ event.type }}</h1>
+    <h2>{{ event.title }}</h2>
+    <h3 id="artists">
+      {% for a in event.artist.all %}
+        {{ a }}<br>
+      {% endfor %}
+    <h4>{{ event.year }}</h4>
 <div id="index">
   <p class="year">2008</p>
   <p class="year">2009</p>
@@ -153,31 +158,18 @@ h4{
 </div>
   </div>
 
+
+  <!-- IMAGES LOOP -->
   <div class="column middle">
-   <img src="../assets/agitpov/agitpov1.jpg" alt="template media" class="media">
-   <img src="../assets/agitpov/agitpov2.jpg" alt="template media" class="media">
+   <img src="{% static "image/agitpov/agitpov1.jpg" %}" alt="template media" class="media">
+   <img src="{% static "image/agitpov/agitpov2.jpg" %}" alt="template media" class="media">
   </div>
 
   <div class="column side" id="right">
-    <a href="../index_en.html"><img src="../assets/eb_logo.png" alt="Archives" id="logo"></a>
-    <p id="description">description of event.</p>
-</div>
-</div>
-
-<div class="footer"></div>
-
-</body>
-</html>
-  </div>
-
-  <div class="column middle">
-   <img src="../assets/agitpov/agitpov1.jpg" alt="template media" class="media">
-   <img src="../assets/agitpov/agitpov2.jpg" alt="template media" class="media">
-  </div>
-
-  <div class="column side" id="right">
-    <a href="../index_en.html"><img src="../assets/eb_logo.png" alt="Archives" id="logo"></a>
-    <p id="description">description of event.</p>
+    <a href="../index_en.html"><img src="{% static "image/eb_logo.png" %}" alt="Archives" id="logo"></a>
+    <p id="description">
+      {{ event.description }}
+    </p>
 </div>
 </div>
 

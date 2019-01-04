@@ -39,8 +39,8 @@ urlpatterns = [
     re_path('^talks/(?P<year>[0-9]{4})/(?P<letter>[A-Z]{1})/$', views.talk, name='talks'),
     path('events', views.event, name='events'),
     re_path('^events/(?P<year>[0-9]{4})/$', views.event, name='events'),
-    re_path('^/events(?P<letter>[A-Z]{1})/$', views.event, name='events'),
-    re_path('^/events(?P<year>[0-9]{4})/(?P<letter>[A-Z]{1})/$', views.event, name='events'),
+    re_path('^events/(?P<letter>[A-Z]{1})/$', views.event, name='events'),
+    re_path('^events/(?P<year>[0-9]{4})/(?P<letter>[A-Z]{1})/$', views.event, name='events'),
     path('residencies', views.residency, name='residencies'),
     re_path('^residencies/(?P<year>[0-9]{4})/$', views.residency, name='residencies'),
     re_path('^residencies/(?P<letter>[A-Z]{1})/$', views.residency, name='residencies'),
@@ -49,4 +49,5 @@ urlpatterns = [
     re_path('^miscs/(?P<year>[0-9]{4})/$', views.misc, name='miscs'),
     re_path('^miscs/(?P<letter>[A-Z]{1})/$', views.misc, name='miscs'),
     re_path('^miscs/(?P<year>[0-9]{4})/(?P<letter>[A-Z]{1})/$', views.misc, name='miscs'),
+    path('e/<int:pk>', views.event_details, name='event_details'),
 ]

@@ -6,6 +6,11 @@ from .models import *
 def index(request):
    return render(request, "index.html")
 
+def event_details(request, pk):
+   event = Event.objects.get(pk=pk)
+   context = { 'event':event }
+   return render(request, "event_details.html", context=context)
+
 def exhibit(request, year=None, letter=None):
    event_type = 'exhibit'
    event_title = 'exhibits'
