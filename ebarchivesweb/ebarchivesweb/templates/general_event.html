@@ -9,27 +9,20 @@
         <h1>{{ event_title }}</h1>
     <div class="index">
     <div id="index1">
-      <p class="year">2008</p>
-      <p class="year">2009</p>
-      <p class="year">2010</p>
-      <p class="year">2011</p>
-      <p class="year">2012</p>
-      <p class="year">2013</p>
-      <p class="year">2014</p>
-      <p class="year">2015</p>
-      <p class="year">2016</p>
-      <p class="year">2017</p>
-      <p class="year">2018</p>
-      <p class="year">2019</p>
+    {% for y in year_range %}
+      <p class="year"><a href="/{{ event_title }}/{{ y }}">{{ y }}</a></p>
+    {% endfor %}
     </div>
     <div id="index2">
-      <p id="a">A</p><p id="b">B</p><p id="c">C</p><p id="d">D</p><p id="e">E</p><p id="f">F</p><p id="g">G</p>
-      <p id="h">H</p><p id="i">I</p><p id="j">J</p><p id="k">K</p>
-      <p id="l">L</p><p id="m">M</p>
+    {% for a1 in alpha_range1 %}
+        <p><a href="/{{ event_title }}/{{ a1 }}">{{ a1 }}</p>
+    {% endfor %}
     </div>
     <div id="index3">
-    <p id="n">N</p><p id="o">O</p><p id="pp">P</p><p id="q">Q</p><p id="r">R</p><p id="s">S</p><p id="t">T</p>
-    <p id="u">U</p><p id="v">V</p><p id="w">W</p><p id="x">X</p><p id="y">Y</p><p id="z">Z</p><p id="zero">0</p>
+      {% for a2 in alpha_range2 %}
+        <p><a href="/{{ event_title }}/{{ a2 }}">{{ a2 }}</p>
+      {% endfor %}
+        <p id="0">0</p>
     </div>
     </div>
     </div></div>
@@ -37,7 +30,7 @@
       <div class="column middle">
         <nav>
             {% for e in events %}
-                <p><a href="/workshop/1">{{ e.title }}</a></p>
+                <p><a href="/event/{{ e.pk }}">{{ e.title }}</a></p>
             {% endfor %}
         </nav>
      </div>
