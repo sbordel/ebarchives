@@ -1,9 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
-<title>archives eb</title>
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i&amp;subset=latin-ext,vietnamese">
+<!--<link rel="stylesheet" href="stylescreen.scss">-->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<title>archives eb</title>
 
 <style>
   body{
@@ -34,10 +39,31 @@
     color: #e80000;
     text-decoration: none;
   }
+  .language{
+    color: #4e4e4e;
+    position: fixed;
+    top:0;
+    right:0;
+    margin-top: 30px;
+    margin-right: 35px;
+  }
+  .credits:hover{
+    font-weight: normal;
+  }
+  .credits{
+    font-family: 'Courier', monospace;
+    font-size: 10px;
+    font-weight: normal;
+    color: #8c8c8c;
+    position: fixed;
+    bottom:0;
+    right:0;
+    margin-bottom: 30px;
+    margin-right: -30px;
+  }
   #img {
     width: 140px;
   }
-  /*
   #search {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 7.5pt;
@@ -46,31 +72,36 @@
     margin-right: auto;
     width: 14.18%;
   }
-  */
+  #socan{
+    width: 26.5%;
+    padding-left: 5px;
+  }
 </style>
 <body>
-<!--navigation-->
+<header></header>
 <div class="grid">
 <nav>
-<img src="assets/eb_logo.png" alt="Archives" class="index" id="img">
-<p class="index"><a href="exhibit">exhibit</a></p>
-<p class="index"><a href="festival">festival</a></p>
-<p class="index"><a href="workshop">workshop</a></p>
-<p class="index"><a href="radio">radio</a></p>
-<p class="index"><a href="conference">talk</a></p>
-<p class="index"><a href="event">event</a></p>
-<p class="index"><a href="misc">misc</a></p>
+<img src="{% static "image/eb_logo.png" %}" alt="Archives" class="index" id="img">
+<!--searchbar-->
+<p><table id="search" cellpadding="0" cellspacing="0" border="0">
+<tr>
+    <input type="search" name="q" size="10">
+    <input type="submit" value=" -> ">
+</tr>
+</table></p>
+<!--navigation-->
+<p class="index"><a href="/exhibit">exhibits</a></p>
+<p class="index"><a href="/festival">festivals</a></p>
+<p class="index"><a href="/workshop">workshops</a></p>
+<p class="index"><a href="/residency">residencies</a></p>
+<p class="index"><a href="/radio">radio</a></p>
+<p class="index"><a href="/talk">talks</a></p>
+<p class="index"><a href="/event">events</a></p>
+<p class="index"><a href="/misc">misc</a></p>
 </nav>
 </div>
+<a class="language" href="index_fr.html">FR</a>
+<a class="credits" href="http://www.socan.com/">POWERED BY<img id="socan" src="{% static "image/socan_logo_small.png" %}" alt="SOCAN"></a>
 <footer></footer>
-<!--search bar-->
-<!--
-  <table id="search" cellpadding="0" cellspacing="0" border="0">
-  <tr>
-  		<input type="search" name="q" size="10">
-  		<input type="submit" value=" * ">
-  </tr>
-  </table>
--->
 </body>
 </html>

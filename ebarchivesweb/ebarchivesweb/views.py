@@ -6,32 +6,110 @@ from .models import *
 def index(request):
    return render(request, "index.html")
 
-def exhibit(request):
-   return render(request, "exhibit.html")
-
-def festival(request):
-   return render(request, "festival.html")
-
-def workshop(request, year=None, letter=None):
-   workshops = Event.objects.filter(type__type__exact='workshop')
+def exhibit(request, year=None, letter=None):
+   event_type = 'exhibit'
+   event_title = 'exhibits'
+   events = Event.objects.filter(type__type__exact=event_type)
    if year is not None:
-       workshops = workshops.filter(year=year)
+       events = events.filter(year=year)
    if letter is not None:
-       workshops = workshops.filter(title__startswith=letter)
+       events = events.filter(title__startswith=letter)
 
    context = {
-        'workshops': workshops,
+        'events': events,
+        'event_title': event_title,
     }
-   return render(request, "workshop.html", context=context)
+   return render(request, "general_event.html", context=context)
+
+def festival(request, year=None, letter=None):
+   event_type = 'festival'
+   event_title = 'festivals'
+   events = Event.objects.filter(type__type__exact=event_type)
+   if year is not None:
+       events = events.filter(year=year)
+   if letter is not None:
+       events = events.filter(title__startswith=letter)
+
+   context = {
+        'events': events,
+        'event_title': event_title,
+    }
+   return render(request, "general_event.html", context=context)
+
+def workshop(request, year=None, letter=None):
+   event_type = 'workshop'
+   event_title = 'workshops'
+   events = Event.objects.filter(type__type__exact=event_type)
+   if year is not None:
+       events = events.filter(year=year)
+   if letter is not None:
+       events = events.filter(title__startswith=letter)
+
+   context = {
+        'events': events,
+        'event_title': event_title,
+    }
+   return render(request, "general_event.html", context=context)
+
+def talk(request, year=None, letter=None):
+   event_type = 'talk'
+   event_title = 'talks'
+   events = Event.objects.filter(type__type__exact=event_type)
+   if year is not None:
+       events = events.filter(year=year)
+   if letter is not None:
+       events = events.filter(title__startswith=letter)
+
+   context = {
+        'events': events,
+        'event_title': event_title,
+    }
+   return render(request, "general_event.html", context=context)
+
+def event(request, year=None, letter=None):
+   event_type = 'event'
+   event_title = 'events'
+   events = Event.objects.filter(type__type__exact=event_type)
+   if year is not None:
+       events = events.filter(year=year)
+   if letter is not None:
+       events = events.filter(title__startswith=letter)
+
+   context = {
+        'events': events,
+        'event_title': event_title,
+    }
+   return render(request, "general_event.html", context=context)
+
+def residency(request, year=None, letter=None):
+   event_type = 'residency'
+   event_title = 'residencies'
+   events = Event.objects.filter(type__type__exact=event_type)
+   if year is not None:
+       events = events.filter(year=year)
+   if letter is not None:
+       events = events.filter(title__startswith=letter)
+
+   context = {
+        'events': events,
+        'event_title': event_title,
+    }
+   return render(request, "general_event.html", context=context)
+
+def misc(request, year=None, letter=None):
+   event_type = 'misc'
+   event_title = 'misc'
+   events = Event.objects.filter(type__type__exact=event_type)
+   if year is not None:
+       events = events.filter(year=year)
+   if letter is not None:
+       events = events.filter(title__startswith=letter)
+
+   context = {
+        'events': events,
+        'event_title': event_title,
+    }
+   return render(request, "general_event.html", context=context)
 
 def radio(request):
    return render(request, "radio.html")
-
-def talk(request):
-   return render(request, "talk.html")
-
-def event(request):
-   return render(request, "event.html")
-
-def misc(request):
-   return render(request, "misc.html")

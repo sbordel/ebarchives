@@ -6,7 +6,7 @@
     <header></header>
     <div class="row">
       <div class="column side" id="left">
-        <h1>{{ event_type }}</h1>
+        <h1>{{ event_title }}</h1>
     <div class="index">
     <div id="index1">
       <p class="year">2008</p>
@@ -37,7 +37,7 @@
       <div class="column middle">
         <nav>
             {% for e in events %}
-                <p><a href="/workshop/1">{{ w.title }}</a></p>
+                <p><a href="/workshop/1">{{ e.title }}</a></p>
             {% endfor %}
         </nav>
      </div>
