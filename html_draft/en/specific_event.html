@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>workshop</title>
+<title>archives</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
@@ -15,6 +15,7 @@ body {
   background-color: #dbdbe0;
   line-height: 3px;
   font-family: 'Cousine', monospace;
+  text-decoration: none;
 }
 header {
   padding: 50px;
@@ -22,20 +23,27 @@ header {
 h1{
   font-size:16px;
   color: #e80000;
-  text-decoration: none;
-  padding-bottom: 5px;
+  padding-bottom:5px;
 }
-p {
-  text-decoration: none;
-}
-#subtitle{
+h2{
   text-transform: uppercase;
+  font-weight: normal;
   font-size:13px;
   color: #000000;
+  line-height:15px;
+  max-height: 12px;
+  overflow-x: scroll;
+  margin-bottom:-5px;
+  margin-top:-5px;
 }
-#subtitle2{
+h3,h4 {
+  font-weight: normal;
   font-size:12px;
   color: #000000;
+  line-height: 15px;
+}
+h3{
+  margin-bottom:-10px;
 }
 .column {
   float: left;
@@ -56,34 +64,26 @@ p {
   transform: translateX(-50%);
   z-index: -9999;
 }
-#description2, #description1{
-  position: relative;
-  line-height:15px;
-  color: #4e4e4e;
-  height: 300px;
-  max-width: 250px;
-  }
-  #description2{
+ #artists{
+  height: 45px;
+  overflow-y: scroll;
+ }
+  #description{
+    position: relative;
+    line-height:15px;
+    color: #4e4e4e;
     font-size:13px;
-    top: 150px;
+    top: 70px;
+    height: 301px;
+    overflow-y: scroll;
   }
   #index{
     position: relative;
     font-size:12px;
     color: #4e4e4e;
     height: 300px;
-    top: -70px;
+    top: 168px;
   }
-  #description1{
-    font-size:12px;
-    top: 70px;
-    margin-left:81px;
-    font-style: oblique;
-  }
- #artists{
-   line-height: 10px;
-   margin-left:15px;
- }
   .year:active{
     font-style: italic;
     text-decoration: none;
@@ -118,7 +118,7 @@ p {
   clear: both;
 }
 /* responsive layouts for cellphones*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
   .column.side, .column.middle {
     width: 100%;
   }
@@ -129,18 +129,14 @@ p {
 </style>
 </head>
 <body>
-
 <header></header>
 
 <div class="row">
   <div class="column side" id="left">
-    <h1>workshop</h1>
-<p id="subtitle">agit p.o.v.</p>
-<a id="subtitle2">
-<p id="artists">Alexandre Castonguay & Thomas Ouellet Fredericks</p>
-<p>2013</p>
-</a>
-<p id="description1">this is a specific description of the workshop, if recurrent</p>
+    <h1>type</h1>
+  <h2>title of event</h2>
+<h3 id="artists">artists participating/organising event</p>
+<h4>year of event</h4>
 <div id="index">
   <p class="year">2008</p>
   <p class="year">2009</p>
@@ -158,13 +154,13 @@ p {
   </div>
 
   <div class="column middle">
-   <img src="assets/agitpov/agitpov1.jpg" alt="agit p.o.v." class="media">
-<img src="assets/agitpov/agitpov2.jpg" alt="agit p.o.v." class="media">
+   <img src="../assets/agitpov/agitpov1.jpg" alt="template media" class="media">
+   <img src="../assets/agitpov/agitpov2.jpg" alt="template media" class="media">
   </div>
 
   <div class="column side" id="right">
-    <a href="index_en.html"><img src="assets/eb_logo.png" alt="Archives" id="logo"></a>
-    <p id="description2">this is the workshop description</p>
+    <a href="../index_en.html"><img src="../assets/eb_logo.png" alt="Archives" id="logo"></a>
+    <p id="description">description of event.</p>
 </div>
 </div>
 
