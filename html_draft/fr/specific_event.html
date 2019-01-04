@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>archives</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #dbdbe0;
+  line-height: 3px;
+  font-family: 'Cousine', monospace;
+  text-decoration: none;
+}
+header {
+  padding: 50px;
+}
+h1{
+  font-size:16px;
+  color: #e80000;
+  padding-bottom:5px;
+}
+h2{
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size:13px;
+  color: #000000;
+  line-height:15px;
+  max-height: 12px;
+  overflow-x: scroll;
+  margin-bottom:-5px;
+  margin-top:-5px;
+}
+h3,h4 {
+  font-weight: normal;
+  font-size:12px;
+  color: #000000;
+  line-height: 15px;
+}
+h3{
+  margin-bottom:-10px;
+}
+.column {
+  float: left;
+  padding: 10px;
+}
+/*left+right columns*/
+.column.side {
+  position: fixed;
+}
+/*middle column*/
+.column.middle {
+  width: 45%;
+  text-align: center;
+  position: absolute;
+  margin-top: 125px;
+  left: 50%;
+  top: 0%;
+  transform: translateX(-50%);
+  z-index: -9999;
+}
+ #artists{
+  height: 45px;
+  overflow-y: scroll;
+ }
+  #description{
+    position: relative;
+    line-height:15px;
+    color: #4e4e4e;
+    font-size:13px;
+    top: 70px;
+    height: 301px;
+    overflow-y: scroll;
+  }
+  #index{
+    position: relative;
+    font-size:12px;
+    color: #4e4e4e;
+    height: 300px;
+    top: 168px;
+  }
+  .year:active{
+    font-style: italic;
+    text-decoration: none;
+  }
+  .year:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
+#left {
+  text-align: right;
+  position: fixed;
+  margin-top: -3px;
+  width: 27.5%;
+}
+#right {
+  text-align: left;
+  position: fixed;
+  left: 75%;
+  transform: translateX(-10%);
+  width: 25%;
+}
+.media {
+  width:100%;
+  margin-bottom: 10px;
+}
+#logo {
+  width: 80px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* responsive layouts for cellphones*/
+@media screen and (max-width: 500px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+.footer {
+  padding: 50px;
+}
+}
+</style>
+</head>
+<body>
+<header></header>
+
+<div class="row">
+  <div class="column side" id="left">
+    <h1>type</h1>
+  <h2>title of event</h2>
+<h3 id="artists">artists participating/organising event</p>
+<h4>year of event</h4>
+<div id="index">
+  <p class="year">2008</p>
+  <p class="year">2009</p>
+  <p class="year">2010</p>
+  <p class="year">2011</p>
+  <p class="year">2012</p>
+  <p class="year">2013</p>
+  <p class="year">2014</p>
+  <p class="year">2015</p>
+  <p class="year">2016</p>
+  <p class="year">2017</p>
+  <p class="year">2018</p>
+  <p class="year">2019</p>
+</div>
+  </div>
+
+  <div class="column middle">
+   <img src="../assets/agitpov/agitpov1.jpg" alt="template media" class="media">
+   <img src="../assets/agitpov/agitpov2.jpg" alt="template media" class="media">
+  </div>
+
+  <div class="column side" id="right">
+    <a href="../index_en.html"><img src="../assets/eb_logo.png" alt="Archives" id="logo"></a>
+    <p id="description">description of event.</p>
+</div>
+</div>
+
+<div class="footer"></div>
+
+</body>
+</html>
