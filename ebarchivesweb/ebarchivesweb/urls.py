@@ -33,6 +33,7 @@ urlpatterns = [
     re_path('^workshops/(?P<letter>[A-Z]{1})/$', views.workshop, name='workshops'),
     re_path('^workshops/(?P<year>[0-9]{4})/(?P<letter>[A-Z]{1})/$', views.workshop, name='workshops'),
     path('radio', views.radio, name='radio'),
+    re_path('^radio/(?P<year>[0-9]{4})/$', views.radio, name='radio'),
     path('talks', views.talk, name='talk'),
     re_path('^talks/(?P<year>[0-9]{4})/$', views.talk, name='talks'),
     re_path('^talks/(?P<letter>[A-Z]{1})/$', views.talk, name='talks'),

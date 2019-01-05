@@ -165,5 +165,18 @@ def misc(request, year=None, letter=None):
     }
    return render(request, "general_event.html", context=context)
 
-def radio(request):
-   return render(request, "radio.html")
+def radio(request, year=None):
+   event_type = 'radio'
+   event_title = 'radio'
+   year_range = range(2015,2020)
+   events = Event.objects.filter(type__type__exact=event_type)
+   if year is not None:
+       events = events.filter(year=year)
+
+   context = {
+        'events': events,
+        'event_title': event_title,
+        'event_type': event_type,
+        'year_range': year_range,
+    }
+   return render(request, "radio.html", context=context)

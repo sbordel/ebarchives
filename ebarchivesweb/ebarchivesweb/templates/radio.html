@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,11 +143,9 @@ h1{
   <div class="column side" id="left">
     <h1>radio</h1>
 <div class="index" id="index1">
-  <p class="year" id="2015">2015</p>
-  <p class="year" id="2016">2016</p>
-  <p class="year" id="2017">2017</p>
-  <p class="year" id="2018">2018</p>
-  <p class="year" id="2019">2019</p>
+  {% for y in year_range %}
+    <p class="year"><a href="/{{ event_type }}/{{ y }}">{{ y }}</a></p>
+  {% endfor %}
   <p id="description1">this is a specific description of a selected episode</p>
 </div>
 </div></div>
@@ -194,7 +194,7 @@ h1{
     </div>
 
   <div class="column side" id="right">
-    <a href="index_en.html"><img src="assets/eb_logo.png" alt="Archives" id="logo"></a>
+    <a href="index_en.html"><img src=" {% static "image/eb_logo.png" %}" alt="Archives" id="logo"></a>
     <div id="description3"><p>Eastern Bloc and CKUT are teaming up for a reinvented radio project, a curation of sounds picked and pulled from a variety of sound archives and banks, carefully integrating music from local and non-local artists.</p>
 <p>Entitled "PirateBlocRadio", this program will be broadcasted every first thursday of the month from 8:00 PM to 9:00 PM. The show seeks to explore the scope of acoustic creation through experimentation and DIY techniques. It also intends to inform auditors about local digital arts events, particularly those offered by Eastern Bloc.</p>
 <p>"PirateBlocRadio" aims to promote and support the works of local emerging artists in Montreal and/or in the Canadian art community.</p>
