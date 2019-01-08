@@ -40,15 +40,6 @@ with open('exhibits.csv') as csvfile:
                         p.artist.add(a_obj)
             p.save()
 
-        # IMAGES MANYTOMANY
-        if row['IMAGES/PDF']:
-            images = row['IMAGES/PDF'].split("\n")
-            print(images)
-            for a in images:
-                if a:
-                    print("GETTING IMAGE: " + a)
-                    a_obj = Media.objects.get(name=str.lower(a))
-                    if a_obj:
-                        p.artist.add(a_obj)
-            p.save()
+        # MEDIA MANYTOMANY
 
+        # TYPE FOREIGNKEY
