@@ -162,8 +162,11 @@ h4{
 
   <!-- IMAGES LOOP -->
   <div class="column middle">
-   <img src="{% static "image/agitpov/agitpov1.jpg" %}" alt="template media" class="media">
-   <img src="{% static "image/agitpov/agitpov2.jpg" %}" alt="template media" class="media">
+  {% if images %}
+    {% for i in images %}
+      <img src="{{ i }}" alt="{{ event.title }}" class="media">
+    {% endfor %}
+  {% endif %}
   </div>
 
   <div class="column side" id="right">

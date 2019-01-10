@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from django.conf import settings
 from .models import *
+from os import listdir
+from os.path import isfile, join
+import imghdr
 
 # Create your views here.
 
@@ -8,7 +12,18 @@ def index(request):
 
 def event_details(request, pk):
    event = Event.objects.get(pk=pk)
-   context = { 'event':event }
+   media_list = []
+   images_folder = None
+   images = None
+   
+   for m in event.media.all():
+       if m.type == 'image':
+           images_folder = m.url + '/'
+           break
+   if images_folder:
+       images_path = settings.MEDIA_ROOT + images_folder
+       images = [settings.MEDIA_URL+images_folder+f for f in listdir(images_path) if imghdr.what(join(images_path, f))]
+   context = { 'event':event, 'images':images }
    return render(request, "event_details.html", context=context)
 
 def exhibit(request, year=None, letter=None):
@@ -121,7 +136,7 @@ def event(request, year=None, letter=None):
     }
    return render(request, "general_event.html", context=context)
 
-def residency(request, year=None, letter=None):
+def residence(request, year=None, letter=None):
    event_type = 'residence'
    event_title = 'residencies'
    year_range = range(2008,2020)
@@ -180,3 +195,4 @@ def radio(request, year=None):
         'year_range': year_range,
     }
    return render(request, "radio.html", context=context)
+
