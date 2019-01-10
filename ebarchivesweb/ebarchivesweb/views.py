@@ -122,7 +122,7 @@ def event(request, year=None, letter=None):
    return render(request, "general_event.html", context=context)
 
 def residency(request, year=None, letter=None):
-   event_type = 'residency'
+   event_type = 'residence'
    event_title = 'residencies'
    year_range = range(2008,2020)
    alpha_range1 = [chr(i) for i in range(ord('A'),ord('M')+1)]
