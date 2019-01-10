@@ -12,9 +12,10 @@ from ebarchivesweb.models import *
 path = "/home/tiago/Hacking/ebarchives/CSV"
 os.chdir(path)
 
-with open('artists.csv') as csvfile:
+with open('recurring.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-        p = Artist(name=row['artist'].rstrip())
-        print(p)
-        p.save()
+        if row['RECURRING_TITLE_EN'] is not '':
+            p = RecurringEvent(title=row['RECURRING_TITLE_EN'], title_fr=row['RECURRING_TITLE_FR'], description=row['RECURRING_DESCRIPTION_EN'], description_fr=row['RECURRING_DESCRIPTION_FR'])
+            print(p)
+            p.save()

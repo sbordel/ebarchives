@@ -25,12 +25,12 @@ SECRET_KEY = '$j9azks$h+4v(pimlv$$ovaypm2!)0)cm^(*wjh5gqfia!+6*f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
 INSTALLED_APPS = [
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -119,3 +119,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240 # higher than the count of fields
+

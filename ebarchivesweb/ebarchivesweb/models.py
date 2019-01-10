@@ -64,6 +64,8 @@ class Event(models.Model):
     type = models.ForeignKey('EventType', on_delete=models.SET_NULL, null=True)
     year = models.PositiveSmallIntegerField(blank=True, null=True)
     comment = models.TextField(null=True, blank=True)
+    recurring_event = models.ForeignKey('RecurringEvent', on_delete=models.SET_NULL, null=True, blank=True)
+    order = models.PositiveIntegerField(null=True, blank=True)
 
     def __str__(self):
         return "%s" % (self.title)
@@ -79,13 +81,13 @@ class Media(models.Model):
 
 class Artist(models.Model):
     name = models.CharField(max_length=200)
+    order = models.PositiveIntegerField(null=True, blank=True)
 
     def __str__(self):
         return "%s" % (self.name)
 
 class EventType(models.Model):
     type = models.CharField(choices=EVENT_CHOICES, max_length=200)
-    recurring_event = models.ForeignKey('RecurringEvent', on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return "%s" % (self.type)
