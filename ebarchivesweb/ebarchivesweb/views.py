@@ -10,6 +10,9 @@ import imghdr
 def index(request):
    return render(request, "index.html")
 
+def ack(request):
+   return render(request, "ack.html")
+
 def event_details(request, pk):
    event = Event.objects.get(pk=pk)
    media_list = []
@@ -195,4 +198,16 @@ def radio(request, year=None):
         'year_range': year_range,
     }
    return render(request, "radio.html", context=context)
+
+def search(request):
+    query = request.GET.get('q', '')
+    if query:
+        results = Event.objects.filter(title__icontains=query).distinct()
+    else:
+        results = []
+ 
+    context = {
+         'events': results,
+     }
+    return render(request, "general_event.html", context=context)
 

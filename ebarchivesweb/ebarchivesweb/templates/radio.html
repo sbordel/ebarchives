@@ -147,59 +147,25 @@ h1{
   {% for y in year_range %}
     <p class="year"><a href="/{{ event_type }}/{{ y }}">{{ y }}</a></p>
   {% endfor %}
-  <p id="description1">this is a specific description of a selected episode</p>
+  {% for e in events|slice:":1" %}
+    <p id="description1">{{ e.recurring_event.description }}</p>
+  {% endfor %}
 </div>
 </div></div>
-
   <div class="column middle">
-    <div id="list2015">
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-ep-9-november-5th-2015%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-ep-7-september-3rd-2015%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-ep-7-october-1st-2015%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-ep-6-august-6-2016%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-ep-5-july-2-2015%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-june-4th-2015-sight-sound-wrap-up%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-april-2nd-2015%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-may-7th-2015-sight-sound-edition%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-show-1-march-5th-2015%2F"></iframe>
-    </div>
-    <div id="list2016">
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-dec-1-2016%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-nov-3-2016%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-sight-sound-2016-edition%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-ep-13-lucas-paris-artist-in-residence%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-ep-13-ibrida-pluri-festival%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-ep-13-february-4th-2016%2F"></iframe>
-    </div>
-    <div id="list2017">
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpbr-susytechnology-feature-december-2017%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpbr-akousma-wrap-up-2017%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpbr-sight-sound-2017%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpbr_aug-2017%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-60717%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpbr_-in-situ%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-roby-provost-peter-flemming%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-30517%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-social-habitat%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpirateblocradio-dead-web%2F"></iframe>
-    </div>
-    <div id="list2018">
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpbr-december-2018%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpbr-october-2018%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpbr-nuit-blanche-march-2018%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpbr-february-2018%2F"></iframe>
-    <iframe class="media" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2FPirateBlocRadio%2Fpbr-january-2018%2F"></iframe>
-    </div>
-    <div id="list2019">
-    </div>
+
+    {% for e in events %}
+        {% for a in e.media.all %}
+            <iframe class="media" height="60" src="{{ a }}"></iframe>
+        {% endfor %}
+    {% endfor %}
     </div>
 
   <div class="column side" id="right">
-    <a href="index_en.html"><img src=" {% static "image/eb_logo.png" %}" alt="Archives" id="logo"></a>
-    <div id="description3"><p>Eastern Bloc and CKUT are teaming up for a reinvented radio project, a curation of sounds picked and pulled from a variety of sound archives and banks, carefully integrating music from local and non-local artists.</p>
-<p>Entitled "PirateBlocRadio", this program will be broadcasted every first thursday of the month from 8:00 PM to 9:00 PM. The show seeks to explore the scope of acoustic creation through experimentation and DIY techniques. It also intends to inform auditors about local digital arts events, particularly those offered by Eastern Bloc.</p>
-<p>"PirateBlocRadio" aims to promote and support the works of local emerging artists in Montreal and/or in the Canadian art community.</p>
-</div>
+    <a href="/"><img src=" {% static "image/eb_logo.png" %}" alt="Archives" id="logo"></a>
+    {% for e in events|slice:":1" %}
+      <div id="description3"><p>{{ e.description }}</p></div>
+    {% endfor %}
 </div>
 
 
