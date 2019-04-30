@@ -1,82 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <meta charset="utf-8">
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i&amp;subset=latin-ext,vietnamese">
-<!--<link rel="stylesheet" href="stylescreen.scss">-->
-
+<link rel="stylesheet" type="text/css" href="en/css/style_index.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <title>archives eb</title>
-
-<style>
-  body{
-    background-color: #dbdbe0;
-    line-height: 3px;
-  }
-  .grid{
-    display: grid;
-    grid-template-columns: 150px auto 150px;
-    grid-gap: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  nav{
-     grid-column: 1 / 4;
-  }
-  header, footer{
-    height: 150px;
-  }
-  a:hover{
-    font-weight: bold;
-  }
-  a{
-    font-family: 'Cousine', monospace;
-    font-size: 15px;
-    font-weight: lighter;
-    color: #e80000;
-    text-decoration: none;
-  }
-  #img {
-    width: 140px;
-  }
-  /*
-  #search {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 7.5pt;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 14.18%;
-  }
-  */
-</style>
+</head>
 <body>
-<!--HTML-->
 <header></header>
-<!--navigation-->
 <div class="grid">
 <nav>
-<img src="assets/eb_logo.png" alt="Archives" class="index" id="img">
-<p class="index"><a href="exposition.html">expositions</a></p>
-<p class="index"><a href="festival.html">festivals</a></p>
-<p class="index"><a href="atelier.html">ateliers</a></p>
-<p class="index"><a href="residence.html">résidences</a></p>
-<p class="index"><a href="radio.html">radio</a></p>
-<p class="index"><a href="conference.html">conférences</a></p>
-<p class="index"><a href="evenement.html">évènements</a></p>
-<p class="index"><a href="autre.html">autres</a></p>
+<img src="/static/image/eb_logo.png" alt="Archives" class="index" id="img">
+<!-- test to see if works from desktop  <img src="assets/eb_logo.png" alt="Archives" class="index" id="img">-->
+
+<!--searchbar-->
+<p><table id="search" cellpadding="0" cellspacing="0" border="0">
+<tr>
+    <input type="search" name="q" size="10">
+    <input type="submit" value=" -> ">
+</tr>
+</table></p>
+<!--navigation-->
+<p class="index"><a href="/exposition">expositions</a></p>
+<p class="index"><a href="/festival">festivals</a></p>
+<p class="index"><a href="/atelier">ateliers</a></p>
+<p class="index"><a href="/residence">résidences</a></p>
+<p class="index"><a href="/radio">radio</a></p>
+<p class="index"><a href="/conference">conférences</a></p>
+<p class="index"><a href="/evenement">évènements</a></p>
+<p class="index"><a href="/autre">autres</a></p>
+<p class="index"><a href="/ack">*</a></p>
 </nav>
+
 </div>
+<a class="language" href="index_en.html">FR</a>
+<a class="credits" href="https://www.socanfoundation.ca/"><img id="socan" src="/static/image/socan_logo_small.png" alt="SOCAN"></a>
+<!-- test to see if works from desktop <a class="credits" href="https://www.socanfoundation.ca/"><img id="socan" src="en/assets/socan_logo_small.png" alt="SOCAN"></a> -->
 <footer></footer>
-<!--serach bar-->
-<!--
-  <table id="search" cellpadding="0" cellspacing="0" border="0">
-  <tr>
-  		<input type="search" name="q" size="10">
-  		<input type="submit" value=" * ">
-  </tr>
-  </table>
--->
 </body>
 </html>
