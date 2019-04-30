@@ -67,7 +67,7 @@ p:hover {
 #left {
   text-align: right;
   position: fixed;
-  margin-top: -1%;
+  margin-top: 1%;
   /*margin-top: -3px;*/
   width: 27.5%;
 }
