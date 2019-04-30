@@ -127,11 +127,9 @@ p {
 }
  #description1{
   position: absolute;
-  text-align: center;
+  align-items: center;
   padding-top: 5%;
-  margin-bottom: 5%;
-  left: 50%;
-  transform: translateX();
+  padding-bottom: 5%;
 }
 .footer {
   padding: 50px;
