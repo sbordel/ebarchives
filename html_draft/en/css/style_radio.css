@@ -53,8 +53,8 @@ h1{
   text-align: right;
   position: absolute;
   margin-top: 9%;
-  padding-left:15px;
-  padding-right: 15px;
+  padding-left:3%;
+  padding-right: 3%;
   left: 50%;
   top: 0%;
   transform: translateX(-50%);
@@ -118,9 +118,6 @@ h1{
   .column.side{
     width: 100%;
   }
-  /*.column.middle {
-    margin-top: 55%;
-  }*/
 .footer {
   padding: 50px;
 }

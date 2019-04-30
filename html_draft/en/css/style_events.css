@@ -54,8 +54,8 @@ p:hover {
   position: absolute;
   /*margin-top: 125px;*/
   margin-top: 9%;
-  padding-left:15px;
-  padding-right: 15px;
+  padding-left:5%;
+  padding-right: 5%;
   left: 50%;
   top: 0%;
   transform: translateX(-50%);
@@ -109,8 +109,12 @@ p:hover {
 }
 /* responsive layouts for cellphones*/
 @media screen and (max-width: 600px) {
-  .column.side, .column.middle {
+  .column.side{
     width: 100%;
+  }
+  .column.middle {
+    width: 50%;
+    font-size:2vh;
   }
 .footer {
   padding: 50px;
