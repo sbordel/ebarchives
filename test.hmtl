@@ -11,31 +11,22 @@ header {
   padding: 50px;
 }
 h1{
-  text-transform: lowercase;
   font-size:16px;
   color: #e80000;
-  padding-bottom:5px;
+  text-decoration: none;
+  padding-bottom: 5px;
 }
-h2{
+p {
+  text-decoration: none;
+}
+#subtitle{
   text-transform: uppercase;
-  font-weight: normal;
   font-size:13px;
   color: #000000;
-  line-height:15px;
-  max-height: 45px;
-  overflow-x: hidden;
-  margin-bottom:-5px;
-  margin-top:-5px;
 }
-h3,h4 {
-  text-transform: capitalize;
-  font-weight: normal;
+#subtitle2{
   font-size:12px;
   color: #000000;
-  line-height: 15px;
-}
-h4{
-  margin-top:-10px;
 }
 .column {
   float: left;
@@ -58,41 +49,43 @@ h4{
   transform: translateX(-50%);
   z-index: -9999;
 }
-#description2{
+#description1{
   position: relative;
-  font-size:12px;
   line-height:15px;
   color: #4e4e4e;
-  margin-top: 15%;
-  width: 20vw;
-  height: 50vh;
-  overflow-y: scroll;
-}
-#index{
-  position: relative;
-  font-size:12px;
-  color: #4e4e4e;
   height: 300px;
-  top: -70px;
+  max-width: 250px;
 }
-#artists{
-  line-height: 10px;
-  margin-left:15px;
-}
-.year:active{
-  font-style: italic;
-  text-decoration: none;
-}
-.year:hover {
-  font-weight: bold;
-  text-decoration: none;
-}
+  #index{
+    position: relative;
+    font-size:12px;
+    color: #4e4e4e;
+    height: 300px;
+    top: -70px;
+  }
+  #description1{
+    font-size:12px;
+    top: 70px;
+    margin-left:81px;
+    font-style: oblique;
+  }
+ #artists{
+   line-height: 10px;
+   margin-left:15px;
+ }
+  .year:active{
+    font-style: italic;
+    text-decoration: none;
+  }
+  .year:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
 #left {
   text-align: right;
   position: fixed;
   margin-top: -3px;
   width: 27.5%;
-  display: block;
 }
 #right {
   text-align: left;
@@ -100,7 +93,6 @@ h4{
   left: 75%;
   transform: translateX(-10%);
   width: 25%;
-  display: block;
 }
 .media {
   width:100%;
@@ -120,20 +112,30 @@ h4{
 #desktop-version-column{
   display: block;
 }
+/* #mobile-version-column{
+  display: none;
+} */
 /* responsive layouts for cellphones*/
 @media screen and (max-width: 600px) {
 .column.side, .column.middle {
     width: 100%;
 }
+.column.side{
+  display: none;
+}
 #mobile-version-column{
   display: block;
   align-items: center;
+  padding-bottom: 2%;
 }
 #desktop-version-column{
   display: none;
 }
-#right, #left{
-  display: none;
+ #description1{
+  position: absolute;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 .footer {
   padding: 50px;

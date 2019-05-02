@@ -4,17 +4,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--<link rel="stylesheet" type="text/css" href="css/style_event_details.css">-->
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" type="text/css" href="css/style_event_details.css">
 <link href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<title>archives</title>
+<title>Archives</title>
 </head>
 
 <body>
 
 <header></header>
 
+<!-- right column -->
 <div class="row">
   <div class="column side" id="left">
     <h1>{{ event.type }}</h1>
@@ -24,25 +24,10 @@
         {{ a }}<br>
       {% endfor %}
     <h4>{{ event.year }}</h4>
-<div id="index">
-  <p class="year">2008</p>
-  <p class="year">2009</p>
-  <p class="year">2010</p>
-  <p class="year">2011</p>
-  <p class="year">2012</p>
-  <p class="year">2013</p>
-  <p class="year">2014</p>
-  <p class="year">2015</p>
-  <p class="year">2016</p>
-  <p class="year">2017</p>
-  <p class="year">2018</p>
-  <p class="year">2019</p>
-</div>
   </div>
 
-
-  <!-- IMAGES LOOP -->
-  <div class="column middle">
+  <!-- middle column - desktop version *** IMAGE LOOP *** -->
+<div class="column middle" id="desktop-version-column">
   {% if images %}
     {% for i in images %}
       <img src="{{ i }}" alt="{{ event.title }}" class="media">
@@ -50,11 +35,29 @@
   {% endif %}
   </div>
 
-  <div class="column side" id="right">
-    <a href="/"><img src="{% static "image/eb_logo.png" %}" alt="Archives" id="logo"></a>
-    <p id="description">
-      {{ event.description }}
-    </p>
+<!-- middle column - mobile version -->
+<div class="column middle" id="mobile-version-column">
+<h1>{{ event.type }}</h1>
+<h2>{{ event.title }}</h2>
+<h3 id="artists">
+  {% for a in event.artist.all %}
+    {{ a }}<br>
+  {% endfor %}
+<h4>{{ event.year }}</h4>
+
+{% if images %}
+  {% for i in images %}
+    <img src="{{ i }}" alt="{{ event.title }}" class="media">
+  {% endfor %}
+{% endif %}
+</div>
+
+<!-- right column -->
+<div class="column side" id="right">
+  <a href="/"><img src="{% static "image/eb_logo.png" %}" alt="Archives" id="logo"></a>
+  <p id="description2">
+    {{ event.description }}
+  </p>
 </div>
 </div>
 

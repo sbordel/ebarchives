@@ -77,18 +77,19 @@ h1{
   width: 25%;
   margin-top: 0%;
 }
-#description3, #description1{
-  position: relative;
-  font-size:12px;
-  line-height:15px;
-  max-width: 250px;
-  color: #4e4e4e;
-  height: 300px;
-  width: 250px;
+#description3{
+    position: relative;
+    font-size:12px;
+    line-height:15px;
+    color: #4e4e4e;
+    margin-top: 15%;
+    width: 20vw;
+    height: 50vh;
+    overflow-y: scroll;
   }
-  #description3{
+  /* #description3{
     top: 25px;
-  }
+  } */
   .index{
     padding-right: 5px;
   }

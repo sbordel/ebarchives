@@ -40,7 +40,7 @@
   <div class="column side" id="right">
     <a href="/"><img src=" {% static "image/eb_logo.png" %}" alt="Archives" id="logo"></a>
     {% for e in events|slice:":1" %}
-      <!--<div id="description3"><p>{{ e.description }}</p></div>  ** removed ** -->
+      <div id="description3"><p>{{ e.description }}</p></div>
     {% endfor %}
 </div>
 
