@@ -2,8 +2,8 @@
 # -*- coding: utf-
 
 # ===== SETUP ========
-type = 'workshop'
-csv_file = 'workshops.csv'
+type = 'talk'
+csv_file = 'talks.csv'
 # ==== END SETUP =====
 
 import os, csv, sys, django, string
@@ -21,7 +21,7 @@ event_type = EventType.objects.get(type=type)
 print("EVENT TYPE: " + str(event_type))
 recurring = None
 with open(csv_file) as csvfile:
-    reader = csv.DictReader(csvfile, delimiter=',')
+    reader = csv.DictReader(csvfile, delimiter=';')
     for row in reader:
         if row['RECURRING_TITLE_EN']:
             recurring = RecurringEvent.objects.get(title=row['RECURRING_TITLE_EN'])
