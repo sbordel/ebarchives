@@ -10,7 +10,7 @@ import imghdr
 def index(request):
    return render(request, "index.html")
 
-def ack(request):
+def acknowledgment(request):
    return render(request, "ack.html")
 
 def event_details(request, pk):

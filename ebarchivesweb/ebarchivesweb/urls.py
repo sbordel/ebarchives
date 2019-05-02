@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('search/', views.search, name='search'),
-    path('ack', views.ack, name='ack'),
+    path('acknowledgment', views.acknowledgment, name='acknowledgment'),
     path('exhibits', views.exhibit, name='exhibits'),
     re_path('^exhibits/(?P<year>[0-9]{4})/$', views.exhibit, name='exhibits'),
     re_path('^exhibits/(?P<letter>[A-Z]{1})/$', views.exhibit, name='exhibits'),
