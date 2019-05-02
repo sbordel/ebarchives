@@ -3,12 +3,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Archives EB</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/index_functions.js"></script>
+<title>Archives EB</title>
+</head>
+
 <style>
 * {
   box-sizing: border-box;
@@ -28,7 +30,6 @@ header {
 }
 h1{
   font-size:16px;
-  text-transform: lowercase;
   color: #e80000;
   text-decoration: none;
   padding-bottom:10px;
@@ -59,16 +60,16 @@ p:hover {
 .column.middle {
   font-family: 'Cousine', monospace;
   font-size:15px;
-  text-transform: lowercase;
   color: #4e4e4e;
   text-decoration: none;
   line-height: 13px;
   width: 45%;
   text-align: right;
   position: absolute;
-  margin-top: 125px;
-  padding-left:15px;
-  padding-right: 15px;
+  /*margin-top: 125px;*/
+  margin-top: 9%;
+  padding-left:5%;
+  padding-right: 5%;
   left: 50%;
   top: 0%;
   transform: translateX(-50%);
@@ -81,7 +82,8 @@ p:hover {
 #left {
   text-align: right;
   position: fixed;
-  margin-top: -3px;
+  margin-top: 1%;
+  /*margin-top: -3px;*/
   width: 27.5%;
 }
 #right {
@@ -90,6 +92,7 @@ p:hover {
   left: 75%;
   transform: translateX(-10%);
   width: 25%;
+  margin-top: 0%;
 }
 .index{
   padding-right: 5px;
@@ -120,8 +123,12 @@ p:hover {
 }
 /* responsive layouts for cellphones*/
 @media screen and (max-width: 600px) {
-  .column.side, .column.middle {
+  .column.side{
     width: 100%;
+  }
+  .column.middle {
+    width: 50%;
+    font-size:2vh;
   }
 .footer {
   padding: 50px;
@@ -129,6 +136,7 @@ p:hover {
 }
 </style>
 </head>
+
 <body>
 
     {% block content %}
