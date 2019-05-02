@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <header></header>
+    <div class="row">
+      <div class="column side" id="left">
+        <h1>{{ event_title }}</h1>
+    <div class="index">
+    <div id="index1">
+    {% for y in year_range %}
+      <p class="year"><a href="/{{ event_title }}/{{ y }}">{{ y }}</a></p>
+    {% endfor %}
+    </div>
+    <div id="index2">
+    {% for a1 in alpha_range1 %}
+        <p><a href="/{{ event_title }}/{{ a1 }}">{{ a1 }}</p>
+    {% endfor %}
+    </div>
+    <div id="index3">
+      {% for a2 in alpha_range2 %}
+        <p><a href="/{{ event_title }}/{{ a2 }}">{{ a2 }}</p>
+      {% endfor %}
+        <p id="0">0</p>
+    </div>
+    </div>
+    </div></div>
+
+      <div class="column middle">
+        <nav>
+            {% for e in events %}
+                <p><a href="/e/{{ e.pk }}">{{ e.title }}</a></p>
+            {% endfor %}
+        </nav>
+     </div>
+
+      <div class="column side" id="right">
+        <a href="/"><img src="{% static "image/eb_logo.png" %}" alt="Archives" id="logo"></a>
+    </div>
+{% endblock %}
