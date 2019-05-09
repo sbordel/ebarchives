@@ -3,139 +3,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>radio</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static "style_radio.css" %}">
 <link href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/index_functions.js"></script>
-<style>
-* {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  background-color: #dbdbe0;
-  line-height: 3px;
-  font-family: 'Cousine', monospace;
-}
-a{
-  text-decoration: none;
-  color: #4e4e4e;
-}
-header {
-  padding: 50px;
-}
-h1{
-  font-size:16px;
-  text-transform: lowercase;
-  color: #e80000;
-  text-decoration: none;
-  padding-bottom:10px;
-}
-.year:active{
-  font-style: italic;
-  text-decoration: none;
-}
-.year:hover {
-  font-weight: bold;
-  text-decoration: none;
-}
-#index1, #index2, #index3{
-  font-family: 'Cousine', monospace;
-  font-size:13px;
-  color: #000000;
-  text-decoration: none;
-}
-.column {
-  float: left;
-  padding: 10px;
-}
-/*left+right columns*/
-.column.side {
-  position: fixed;
-}
-/*middle column*/
-.column.middle {
-  font-family: 'Cousine', monospace;
-  font-size:15px;
-  color: #4e4e4e;
-  text-decoration: none;
-  line-height: 13px;
-  width: 45%;
-  text-align: right;
-  position: absolute;
-  margin-top: 125px;
-  padding-left:15px;
-  padding-right: 15px;
-  left: 50%;
-  top: 0%;
-  transform: translateX(-50%);
-  z-index: -9999;
-}
-#list2016, #list2017, #list2018, #list2019{
-  display: none;
-}
-#left {
-  text-align: right;
-  position: fixed;
-  margin-top: -3px;
-  width: 27.5%;
-}
-#right {
-  text-align: left;
-  position: fixed;
-  left: 75%;
-  transform: translateX(-10%);
-  width: 25%;
-}
-#description3, #description1{
-  position: relative;
-  font-size:12px;
-  line-height:15px;
-  max-width: 250px;
-  color: #4e4e4e;
-  height: 300px;
-  width: 250px;
-  }
-  #description3{
-    top: 25px;
-  }
-  .index{
-    padding-right: 5px;
-  }
-  #index1{
-    position: absolute;
-    right:6px;
-  }
-  #description1{
-    top: 100px;
-    font-style: oblique;
-  }
-.media {
-  width:100%;
-  margin-bottom: 10px;
-  border: none;
-}
-#logo {
-  width: 80px;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* responsive layouts for cellphones*/
-@media screen and (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
-  }
-.footer {
-  padding: 50px;
-}
-}
-</style>
+<title>Radio</title>
 </head>
+
 <body>
 
 <header></header>
@@ -146,9 +22,6 @@ h1{
 <div class="index" id="index1">
   {% for y in year_range %}
     <p class="year"><a href="/{{ event_type }}/{{ y }}">{{ y }}</a></p>
-  {% endfor %}
-  {% for e in events|slice:":1" %}
-    <p id="description1">{{ e.recurring_event.description }}</p>
   {% endfor %}
 </div>
 </div></div>

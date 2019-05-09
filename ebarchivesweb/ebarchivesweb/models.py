@@ -10,12 +10,20 @@ EVENT_CHOICES = (
         "Event",
     ),
     (
-        "festival",
-        "Festival",
+        "collaboration",
+        "Collaboration",
     ),
     (
-        "misc",
-        "Misc",
+        "salon_data",
+        "Data : Salon",
+    ),
+    (
+        "sight_sound",
+        "Sight & Sound",
+    ),
+    (
+        "meetup",
+        "Meet-up",
     ),
     (
         "radio",
@@ -30,8 +38,8 @@ EVENT_CHOICES = (
         "Workshop",
     ),
     (
-        "exhibit",
-        "Exhibit",
+        "exhibition",
+        "Exhibition",
     )
 )
 

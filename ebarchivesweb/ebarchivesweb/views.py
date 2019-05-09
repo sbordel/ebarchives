@@ -29,9 +29,9 @@ def event_details(request, pk):
    context = { 'event':event, 'images':images }
    return render(request, "event_details.html", context=context)
 
-def exhibit(request, year=None, letter=None):
-   event_type = 'exhibit'
-   event_title = 'exhibits'
+def exhibition(request, year=None, letter=None):
+   event_type = 'exhibition'
+   event_title = 'exhibitions'
    year_range = range(2008,2020)
    alpha_range1 = [chr(i) for i in range(ord('A'),ord('M')+1)]
    alpha_range2 = [chr(i) for i in range(ord('N'),ord('Z')+1)]
@@ -51,9 +51,53 @@ def exhibit(request, year=None, letter=None):
     }
    return render(request, "general_event.html", context=context)
 
-def festival(request, year=None, letter=None):
-   event_type = 'festival'
-   event_title = 'festivals'
+def collaboration(request, year=None, letter=None):
+   event_type = 'collaboration'
+   event_title = 'collaborations'
+   year_range = range(2008,2020)
+   alpha_range1 = [chr(i) for i in range(ord('A'),ord('M')+1)]
+   alpha_range2 = [chr(i) for i in range(ord('N'),ord('Z')+1)]
+   events = Event.objects.filter(type__type__exact=event_type)
+   if year is not None:
+       events = events.filter(year=year)
+   if letter is not None:
+       events = events.filter(title__startswith=letter)
+
+   context = {
+        'events': events,
+        'event_title': event_title,
+        'event_type': event_type,
+        'year_range': year_range,
+        'alpha_range1': alpha_range1,
+        'alpha_range2': alpha_range2,
+    }
+   return render(request, "general_event.html", context=context)
+
+def salon_data(request, year=None, letter=None):
+   event_type = 'salon_data'
+   event_title = 'data : salon'
+   year_range = range(2008,2020)
+   alpha_range1 = [chr(i) for i in range(ord('A'),ord('M')+1)]
+   alpha_range2 = [chr(i) for i in range(ord('N'),ord('Z')+1)]
+   events = Event.objects.filter(type__type__exact=event_type)
+   if year is not None:
+       events = events.filter(year=year)
+   if letter is not None:
+       events = events.filter(title__startswith=letter)
+
+   context = {
+        'events': events,
+        'event_title': event_title,
+        'event_type': event_type,
+        'year_range': year_range,
+        'alpha_range1': alpha_range1,
+        'alpha_range2': alpha_range2,
+    }
+   return render(request, "general_event.html", context=context)
+
+def sight_sound(request, year=None, letter=None):
+   event_type = 'sight_sound'
+   event_title = 'sight & sound'
    year_range = range(2008,2020)
    alpha_range1 = [chr(i) for i in range(ord('A'),ord('M')+1)]
    alpha_range2 = [chr(i) for i in range(ord('N'),ord('Z')+1)]
@@ -161,9 +205,9 @@ def residence(request, year=None, letter=None):
     }
    return render(request, "general_event.html", context=context)
 
-def misc(request, year=None, letter=None):
-   event_type = 'misc'
-   event_title = 'misc'
+def meetup(request, year=None, letter=None):
+   event_type = 'meetup'
+   event_title = 'meet-ups'
    year_range = range(2008,2020)
    alpha_range1 = [chr(i) for i in range(ord('A'),ord('M')+1)]
    alpha_range2 = [chr(i) for i in range(ord('N'),ord('Z')+1)]

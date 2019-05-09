@@ -7,24 +7,29 @@
     <div class="row">
       <div class="column side" id="left">
         <h1>{{ event_title }}</h1>
+
+    {% if event_type != 'sight_sound' %}
     <div class="index">
-    <div id="index1">
-    {% for y in year_range %}
-      <p class="year"><a href="/{{ event_title }}/{{ y }}">{{ y }}</a></p>
-    {% endfor %}
+      <div id="index1">
+        {% for y in year_range %}
+          <p class="year"><a href="/{{ event_type }}/{{ y }}">{{ y }}</a></p>
+        {% endfor %}
+      </div>
+    {% if event_type != 'salon_data' %}
+      <div id="index2">
+        {% for a1 in alpha_range1 %}
+            <p><a href="/{{ event_type }}/{{ a1 }}">{{ a1 }}</p>
+        {% endfor %}
+      </div>
+      <div id="index3">
+        {% for a2 in alpha_range2 %}
+          <p><a href="/{{ event_type }}/{{ a2 }}">{{ a2 }}</p>
+        {% endfor %}
+          <p id="0">0</p>
+      </div>
+    {% endif %}
     </div>
-    <div id="index2">
-    {% for a1 in alpha_range1 %}
-        <p><a href="/{{ event_title }}/{{ a1 }}">{{ a1 }}</p>
-    {% endfor %}
-    </div>
-    <div id="index3">
-      {% for a2 in alpha_range2 %}
-        <p><a href="/{{ event_title }}/{{ a2 }}">{{ a2 }}</p>
-      {% endfor %}
-        <p id="0">0</p>
-    </div>
-    </div>
+    {% endif %}
     </div></div>
 
       <div class="column middle">
