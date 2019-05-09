@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #dbdbe0;
+  line-height: 3px;
+  font-family: 'Cousine', monospace;
+}
+a{
+  text-decoration: none;
+  color: #4e4e4e;
+}
+header {
+  padding: 50px;
+}
+h1{
+  font-size:16px;
+  color: #e80000;
+  text-decoration: none;
+  padding-bottom:10px;
+}
+.year:active{
+  font-style: italic;
+  text-decoration: none;
+}
+.year:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+#index1, #index2, #index3{
+  font-family: 'Cousine', monospace;
+  font-size:13px;
+  color: #000000;
+  text-decoration: none;
+}
+.column {
+  float: left;
+  padding: 10px;
+}
+/*left+right columns*/
+.column.side {
+  position: fixed;
+}
+/*middle column*/
+.column.middle {
+  font-family: 'Cousine', monospace;
+  font-size:15px;
+  color: #4e4e4e;
+  text-decoration: none;
+  line-height: 13px;
+  width: 45%;
+  text-align: right;
+  position: absolute;
+  margin-top: 9%;
+  padding-left:3%;
+  padding-right: 3%;
+  left: 50%;
+  top: 0%;
+  transform: translateX(-50%);
+  z-index: -9999;
+}
+#list2016, #list2017, #list2018, #list2019{
+  display: none;
+}
+#left {
+  text-align: right;
+  position: fixed;
+  margin-top: 1%;
+  width: 27.5%;
+}
+#right {
+  text-align: left;
+  position: fixed;
+  left: 75%;
+  transform: translateX(-10%);
+  width: 25%;
+  margin-top: 0%;
+}
+#description3{
+    position: relative;
+    font-size:12px;
+    line-height:15px;
+    color: #4e4e4e;
+    margin-top: 15%;
+    width: 20vw;
+    height: 50vh;
+    overflow-y: scroll;
+  }
+  /* #description3{
+    top: 25px;
+  } */
+  .index{
+    padding-right: 5px;
+  }
+  #index1{
+    position: absolute;
+    right:6px;
+  }
+  #description1{
+    top: 100px;
+    font-style: oblique;
+  }
+.media {
+  width:100%;
+  margin-bottom: 10px;
+  border: none;
+}
+#logo {
+  width: 80px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* responsive layouts for cellphones*/
+@media screen and (max-width: 500px) {
+  .column.side{
+    width: 100%;
+  }
+.footer {
+  padding: 50px;
+}
+}
