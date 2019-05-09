@@ -4,7 +4,7 @@
 body {
   margin: 0;
   background-color: #dbdbe0;
-  line-height: 3px;
+  line-height: 15px;
   font-family: 'Cousine', monospace;
 }
 header {
@@ -58,7 +58,7 @@ h4{
   transform: translateX(-50%);
   z-index: -9999;
 }
-#description{
+#description2{
   position: relative;
   font-size:12px;
   line-height:15px;

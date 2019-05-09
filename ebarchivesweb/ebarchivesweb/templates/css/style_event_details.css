@@ -58,7 +58,7 @@ h4{
   transform: translateX(-50%);
   z-index: -9999;
 }
-#description2{
+#description{
   position: relative;
   font-size:12px;
   line-height:15px;
