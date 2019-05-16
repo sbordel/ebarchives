@@ -17,6 +17,7 @@ def event_details(request, pk):
    media_list = []
    images_folder = None
    images = None
+   images = [] 
    images_list = [] 
    
    for m in event.media.all():
@@ -25,7 +26,10 @@ def event_details(request, pk):
            break
    images_path = settings.MEDIA_ROOT + images_folder
    if os.path.isdir(images_path):
-       images = [settings.MEDIA_URL+images_folder+f for f in os.listdir(images_path) if imghdr.what(os.path.join(images_path, f))]
+       for f in os.listdir(images_path):
+           if os.path.isfile(os.path.join(images_path, f)):
+               if imghdr.what(os.path.join(images_path, f)):
+                   images.append(settings.MEDIA_URL+images_folder+f)
        for i in images:
            img = settings.BASE_DIR + '/ebarchivesweb/' + i
            if os.path.exists(img):
