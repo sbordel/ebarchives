@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from django.conf import settings
 from .models import *
-from os import listdir
-from os.path import isfile, join
 import imghdr
+import os
 
 # Create your views here.
 
@@ -18,6 +17,7 @@ def event_details(request, pk):
    media_list = []
    images_folder = None
    images = None
+   images_list = [] 
    
    for m in event.media.all():
        if m.type == 'image':
@@ -25,8 +25,12 @@ def event_details(request, pk):
            break
    if images_folder:
        images_path = settings.MEDIA_ROOT + images_folder
-       images = [settings.MEDIA_URL+images_folder+f for f in listdir(images_path) if imghdr.what(join(images_path, f))]
-   context = { 'event':event, 'images':images }
+       images = [settings.MEDIA_URL+images_folder+f for f in os.listdir(images_path) if imghdr.what(os.path.join(images_path, f))]
+       for i in images:
+           img = settings.BASE_DIR + '/ebarchivesweb/' + i
+           if os.path.exists(img):
+               images_list.append(i)
+   context = { 'event':event, 'images':images_list }
    return render(request, "event_details.html", context=context)
 
 def exhibition(request, year=None, letter=None):

@@ -14,7 +14,7 @@
      grid-column: 1 / 4;
   }
   header, footer{
-    height: 20%;
+    height: 100px;
     /*height: 150px;*/
   }
   a:hover{
