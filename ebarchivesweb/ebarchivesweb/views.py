@@ -23,8 +23,8 @@ def event_details(request, pk):
        if m.type == 'image':
            images_folder = m.url + '/'
            break
-   if images_folder:
-       images_path = settings.MEDIA_ROOT + images_folder
+   images_path = settings.MEDIA_ROOT + images_folder
+   if os.path.isdir(images_path):
        images = [settings.MEDIA_URL+images_folder+f for f in os.listdir(images_path) if imghdr.what(os.path.join(images_path, f))]
        for i in images:
            img = settings.BASE_DIR + '/ebarchivesweb/' + i
