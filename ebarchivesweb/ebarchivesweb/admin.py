@@ -6,6 +6,7 @@ class EventAdmin(SortableModelAdmin):
     search_fields = ('title',)
     list_display = ('title', 'year','type')
     sortable = 'order'
+    autocomplete_fields = ['media', 'artist']
 
 class ArtistAdmin(SortableModelAdmin):
     search_fields = ('name',)
