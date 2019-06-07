@@ -19,12 +19,14 @@ def event_details(request, pk):
    images = None
    images = [] 
    images_list = [] 
+   images_path = ""
    
    for m in event.media.all():
        if m.type == 'image':
            images_folder = m.url + '/'
            break
-   images_path = settings.MEDIA_ROOT + images_folder
+   if images_folder is not None:
+       images_path = settings.MEDIA_ROOT + images_folder
    if os.path.isdir(images_path):
        for f in os.listdir(images_path):
            if os.path.isfile(os.path.join(images_path, f)):
